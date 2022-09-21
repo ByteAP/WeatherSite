@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(wallpaper.jpg);
+    background-size:cover;
+}
+
+.container{
+    width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    background-color: rgba(3, 45, 85, 0.226);
+    margin: auto;
+    margin-top: 200px;
+    backdrop-filter: blur(20px);
+}
