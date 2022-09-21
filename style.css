@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,11 +11,135 @@ body{
 }
 
 .container{
-    width: 1000px;
-    height: 600px;
+    width: 800px;
+    height: 400px;
     border-radius: 20px;
     background-color: rgba(3, 45, 85, 0.226);
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     backdrop-filter: blur(20px);
+    position: relative;
+}
+
+.weatherDays{
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: rgba(3, 45, 85, 0.226);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    backdrop-filter: blur(20px);
+    position: relative;
+}
+
+.wDay{
+    width: 90px;
+    height: 130px;
+    border: 1px solid red;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+
+#iconDay{
+    width: 60px;
+    height: 60px;
+    border: 1px solid red;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    left: 50%;
+    margin-left: -30px;
+    
+}
+
+#Day{
+    width: 80px;
+    height: 20px;
+    border: 1px solid red;
+    position: absolute;
+    top: 8px;  
+    left: 50%;
+    margin-left: -40px;
+}
+
+#temperatureDay{
+    width: 20px;
+    height: 25px;
+    border: 1px solid red;
+    position: absolute;
+    bottom: 2px;  
+    left: 10%;
+
+}
+
+#humidityDay{
+    width: 20px;
+    height: 25px;
+    border: 1px solid red;
+    position: absolute;
+    bottom: 2px;  
+    right: 10%;
+}
+
+#temperature{
+    font-size: 60px;
+    position: absolute;
+    right: 60px;
+    top: 40%;
+    font-family: 'Poiret One', cursive;
+}
+
+#humidity{
+    font-size: 60px;
+    position: absolute;
+    left: 60px;
+    top: 40%;
+    font-family: 'Poiret One', cursive;
+
+
+}
+
+#location{
+    font-size: 30px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    font-family: 'Poiret One', cursive;
+}
+
+#date{
+    font-size: 30px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-family: 'Poiret One', cursive;
+}
+
+#weatherType{
+    width: 400px;
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -200px;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+
+
+
+}
+
+#icon{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
 }
