@@ -33,14 +33,20 @@ body{
     margin-bottom: 100px;
     backdrop-filter: blur(20px);
     position: relative;
+    padding: 5px;
 }
 
 .wDay{
-    width: 90px;
+
+    width: 100px;
     height: 130px;
-    border: 1px solid red;
     margin-top: 10px;
     position: relative;
+}
+
+.wDay:hover{
+    border-radius: 20px;
+    background-color: rgba(3, 45, 85, 0.226);
 }
 
 
@@ -48,7 +54,6 @@ body{
 #iconDay{
     width: 60px;
     height: 60px;
-    border: 1px solid red;
     position: absolute;
     top: 50%;
     margin-top: -30px;
@@ -58,38 +63,43 @@ body{
 }
 
 #Day{
+    font-size: 18px;
     width: 80px;
     height: 20px;
-    border: 1px solid red;
     position: absolute;
     top: 8px;  
     left: 50%;
     margin-left: -40px;
+    font-family: 'Poiret One', cursive;
+
 }
 
 #temperatureDay{
-    width: 20px;
+    font-size: 10px;
+    width: 40px;
     height: 25px;
-    border: 1px solid red;
     position: absolute;
     bottom: 2px;  
     left: 10%;
+    font-family: 'Poiret One', cursive;
 
 }
 
 #humidityDay{
-    width: 20px;
+    font-size: 10px;
+    width: 40px;
     height: 25px;
-    border: 1px solid red;
     position: absolute;
     bottom: 2px;  
     right: 10%;
+    font-family: 'Poiret One', cursive;
+
 }
 
 #temperature{
     font-size: 60px;
     position: absolute;
-    right: 60px;
+    right: 40px;
     top: 40%;
     font-family: 'Poiret One', cursive;
 }
@@ -97,7 +107,7 @@ body{
 #humidity{
     font-size: 60px;
     position: absolute;
-    left: 60px;
+    left: 40px;
     top: 40%;
     font-family: 'Poiret One', cursive;
 
@@ -143,3 +153,4 @@ body{
     margin-left: -100px;
     margin-top: -100px;
 }
+

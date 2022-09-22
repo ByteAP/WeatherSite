@@ -40,7 +40,7 @@ var matchings = {
 
 async function fetchDates(){
     
-    var resp = await fetch("https://api.tomorrow.io/v4/timelines?location=45.4383842,10.9916215&fields=humidity,temperature,weatherCode,&timesteps=current&units=metric&apikey=qaP7vyCz9bgYVLmBjEeZdeGwfrAHv4Yc")
+    var resp = await fetch("https://api.tomorrow.io/v4/timelines?location=45.4383842,10.9916215&fields=humidity,temperature,weatherCode,&timesteps=1d&units=metric&apikey=qaP7vyCz9bgYVLmBjEeZdeGwfrAHv4Yc")
     
     var data = await resp.json();
     
@@ -55,38 +55,57 @@ function getResult(a){
     Modify();
 }
 
+var index = 0;
+
 function Modify(){
-    var index = 0;
+
+
     var base = dates.risultato[index]['values'];
+    var date= new Date(dates.risultato[index]['startTime'])
+    var elementIndex = document.querySelectorAll('.wDay')[index];
+    elementIndex.style.backgroundColor = 'rgba(3, 45, 85, 0.226)';
+    elementIndex.style.borderRadius= '20px';
     document.getElementById("temperature").innerHTML = base.temperature + " °C "
     document.getElementById("humidity").innerHTML = base.humidity + " %"
     document.getElementById("weatherType").innerHTML = matchings[base.weatherCode]
     document.getElementById("icon").src = "WeatherIcons/" + base.weatherCode + ".png"
+    document.getElementById("date").innerHTML = date.format("ddd, mm/yyy ");
 
     //----------------------------------------------
 
     var days = {
         day0 : dates.risultato[0],
-        day1 : dates.risultato[1]
-        // day2 : dates.risultato['2']['values'],
-        // day3 : dates.risultato['3']['values'],
-        // day4 : dates.risultato['4']['values'],
-        // day5 : dates.risultato['5']['values'],
-        // day6 : dates.risultato['6']['values'],
-        // day7 : dates.risultato['7']['values']
+        day1 : dates.risultato[1],
+        day2 : dates.risultato[2],
+        day3 : dates.risultato[3],
+        day4 : dates.risultato[4],
+        day5 : dates.risultato[5],
+        day6 : dates.risultato[6],
+        day7 : dates.risultato[7]
     }
 
+   
 
-    for(let i=0; i<7; i++){
-         p = days.day1
-        document.querySelectorAll('#Day')[i].innerHTML = p.startTime;
-    }
-    
-    
+    for(let i=0; i<8; i++){
+        var p = days[Object.keys(days)[i]]
+        var date= new Date(p.startTime)
+        document.querySelectorAll('#Day')[i].innerHTML = date.format("dddd");
+        document.querySelectorAll('#iconDay')[i].src = "WeatherIcons/" + p['values']['weatherCode'] + ".png";
+        document.querySelectorAll('#temperatureDay')[i].innerHTML = p['values']['temperature'] + " °C ";
+        document.querySelectorAll('#humidityDay')[i].innerHTML = p['values']['humidity'] + " %";
+    }     
 
 }
 
-// days[Object.keys(days)[i]]
+
+
+function changeDay(a){
+    var elementIndex = document.querySelectorAll('.wDay')[index];
+    elementIndex.style.backgroundColor = null;
+    index = a
+    Modify();
+}
+
 
 
 
@@ -96,7 +115,7 @@ year = date.getFullYear();
 month = date.getMonth() + 1;
 day = date.getDate();
 
-document.getElementById("date").innerHTML = month + "/" + day + "/" + year;
+
 
 
 
